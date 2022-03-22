@@ -24,6 +24,9 @@ connection.once("open", () => {
 })
 
 //routes
+const noticeRouter= require("./routes/notice");
+app.use("/notice",noticeRouter);
+
 
 
 app.listen(PORT, () => {
