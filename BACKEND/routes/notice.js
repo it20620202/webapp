@@ -65,11 +65,11 @@ router.route("/updateNotice/:noticeId").put(async(req,res)=>{
 })
 
 
-router.route("/deleteNotice/:id").delete(async(req,res)=>{
+router.route("deleteNotice/:noticeId").delete(async(req,res)=>{
     let noticeId= req.params.noticeId;
 
     await notice.findByIdAndDelete(noticeId).then(()=>{
-        res.status(200).send({status:"notice Deleted",noticeId:update });
+        res.status(200).send({status:"notice Deleted" });
 
     }).catch((error)=>{
         console.log(error);
